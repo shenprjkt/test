@@ -21,6 +21,4 @@ jobs:
     runs-on: ubuntu-latest
 
   Build_script:
-      - ln -fs /usr/share/zoneinfo/Asia/Dhaka /etc/localtime && date
-      - locale-gen en_US en_US.UTF-8
       - bash builder.sh
