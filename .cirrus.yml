@@ -1,0 +1,16 @@
+env:
+    token: "ENCRYPTED[ca23aa38ef6f0ad3a89fe1499d5e98bcba2f4fe9c2a26ec5c7a45db24f98a2f2f9fe0a44c5958db913871b0aba1fa414]"
+    chat_id: "ENCRYPTED[816a05e1d83f010ca1328f54a6fbd602a5d59a391399169091bc68a9e89979d469787c28a0f1584277e981689b5bc7d9]"
+
+task:
+  name: "Scarlet-X-Kernel-Builder"
+  timeout_in: 2h
+  container:
+      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+      cpu: 8
+      memory: 32G
+
+  Build_script:
+      - ln -fs /usr/share/zoneinfo/Asia/Dhaka /etc/localtime && date
+      - locale-gen en_US en_US.UTF-8
+      - bash builder.sh
